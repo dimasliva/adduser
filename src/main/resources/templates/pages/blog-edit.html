@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog edit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<main class="container">
+    <div th:insert="blocks/navbar.html :: navbar"/>
+    <div class="bg-light p-5 rounded mt-3" th:each="el : ${user}">
+        <h1>Редактировать пользователя</h1>
+        <form method="post">
+            <input name="firstName" th:value="${el.firstName}" type="text" placeholder="Enter first name" class="form-control"><br/>
+            <input name="lastName" th:value="${el.getLastName()}" type="text" placeholder="Enter last name" class="form-control"><br/>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button href="/" class="btn btn-primary">Go back</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
