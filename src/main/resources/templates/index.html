@@ -10,7 +10,7 @@
         <div th:insert="blocks/navbar.html :: navbar"/>
         <div th:each="el : ${title}" class="alert alert-info mt-2">
             <h2 th:text="${el.getFirstName()}"></h2>
-            <a class="btn btn-warning" th:href="'/blog/' + ${el.getId()}">Details</a>
+            <a class="btn btn-warning" th:href="'/blog/' + ${el.getId()}">Перейти</a>
         </div>
         <div th:insert="blocks/content.html :: main"/>
     </div>
